@@ -1,17 +1,22 @@
 function bubble_sort(nums) {
-
-
-    for (let i = 0; i < nums.length; i++) {
+    let counter = 0
+    let noSwap = true
+    for (let i = nums.length - 1; i >=0 ; i--) {
         
-        for (let j = i + 1; j < nums.length; j++) {
-
+        for (let j = 0; j < nums.length - 1; j++) {
             
-            
-            if (nums[i] > nums[j]) {
-                [nums[i], nums[j]] = [nums[j], nums[i]]
+            if (nums[j] > nums[j+1]) {
+                [nums[j], nums[j+1]] = [nums[j+1], nums[j]]
+                noSwap = false
             } 
+
+            console.log(counter++);
             
         }
+
+       
+
+       if (noSwap) break;
         
     }
 
@@ -21,6 +26,6 @@ function bubble_sort(nums) {
 }
 
 
-console.log(bubble_sort([3,1,2,38,9,100,17,5,2,7]));
+console.log(bubble_sort([11,1,2,3,4]));
 
 
